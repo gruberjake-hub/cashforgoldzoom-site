@@ -1,0 +1,6 @@
+# 1) Force HTTPS everywhere
+http://*   https://:splat   301!
+
+# 2) Canonicalize to the PRIMARY host = www.cashforgoldzoom.com
+https://cashforgoldzoom.com/*   https://www.cashforgoldzoom.com/:splat   301!
+http://cashforgoldzoom.com/*    https://www.cashforgoldzoom.com/:splat   301!

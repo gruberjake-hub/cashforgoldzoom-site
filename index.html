@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cash for Gold Zoom™ — Sell Your Gold with Live Video Appraisal</title>
+  <meta name="description" content="Meet your appraiser live on Zoom, then mail your insured kit. Transparent testing, fast payouts, no pawn-shop energy." />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Cash for Gold Zoom™" />
+  <meta property="og:description" content="Sell your gold with a live video appraisal. Transparent, fast, secure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cashforgoldzoom.com/" />
+  <meta property="og:image" content="https://cashforgoldzoom.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD: LocalBusiness (tune as you get a mailbox/corp location) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Cash for Gold Zoom",
+    "url":"https://cashforgoldzoom.com",
+    "image":"https://cashforgoldzoom.com/og-image.jpg",
+    "description":"Online precious-metals buyer with optional live Zoom appraisal before you ship.",
+    "areaServed":"US",
+    "brand":{"@type":"Brand","name":"Cash for Gold Zoom"},
+    "sameAs":[
+      "https://www.instagram.com/cashforgoldzoom",
+      "https://www.youtube.com/@cashforgoldzoom"
+    ],
+    "parentOrganization":{"@type":"Organization","name":"The Gold Standard USA LLC"}
+  }
+  </script>
+
+  <style>
+    /* Small polish */
+    .gold-grad { background: linear-gradient(135deg,#f3e7c8 0%, #f1d27a 35%, #dcae43 70%, #c18b22 100%); }
+    .gold-text { background: linear-gradient(135deg,#e8d9a8,#c9962c); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3" aria-label="Cash for Gold Zoom Home">
+        <div class="h-8 w-8 rounded-lg gold-grad shadow"></div>
+        <span class="font-semibold tracking-tight">Cash for <span class="gold-text">Gold</span> Zoom™</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#how" class="hover:text-slate-700">How it works</a>
+        <a href="#trust" class="hover:text-slate-700">Why trust us</a>
+        <a href="#faq" class="hover:text-slate-700">FAQs</a>
+        <a href="#contact" class="hover:text-slate-700">Contact</a>
+        <a href="#book" class="inline-flex items-center rounded-lg bg-slate-900 px-4 py-2 text-white hover:bg-slate-800">Book Zoom</a>
+        <a href="#kit" class="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 hover:bg-slate-100">Request Kit</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-lg border px-3 py-2" aria-expanded="false" aria-controls="mNav">
+        <span class="sr-only">Open menu</span>
+        ☰
+      </button>
+    </div>
+    <!-- Mobile nav -->
+    <div id="mNav" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-3 grid gap-3 text-sm">
+        <a href="#how" class="py-2">How it works</a>
+        <a href="#trust" class="py-2">Why trust us</a>
+        <a href="#faq" class="py-2">FAQs</a>
+        <a href="#contact" class="py-2">Contact</a>
+        <a href="#book" class="py-2 rounded-lg bg-slate-900 text-white text-center">Book Zoom</a>
+        <a href="#kit" class="py-2 rounded-lg border border-slate-300 text-center">Request Kit</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+          Sell your gold with a <span class="gold-text">live video appraisal</span>.
+        </h1>
+        <p class="mt-4 text-slate-600 text-lg">
+          Meet your appraiser on Zoom first, then mail your insured kit. Transparent testing, fair offers, <strong>same-day payout</strong> once you accept.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#kit" class="inline-flex items-center justify-center rounded-lg bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">Request Free Kit</a>
+          <a href="#book" class="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 hover:bg-slate-100">Book a Zoom</a>
+        </div>
+        <div class="mt-4 text-xs text-slate-500">
+          Fully insured shipping • Licensed precious-metals buyer • By The Gold Standard USA LLC (WI)
+        </div>
+      </div>
+      <div class="relative">
+        <!-- Placeholder image block (replace with your PSD assets when ready) -->
+        <div class="aspect-video rounded-2xl bg-white shadow ring-1 ring-slate-200 flex items-center justify-center">
+          <div class="text-center p-8">
+            <div class="text-6xl mb-3">💬</div>
+            <p class="font-medium">Live appraisal on Zoom</p>
+            <p class="text-slate-500 text-sm">We show you how we test & weigh — on camera.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">How it works</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+          <div class="text-3xl">📅</div>
+          <h3 class="mt-3 font-semibold">1) Book Zoom or request a kit</h3>
+          <p class="mt-2 text-slate-600">Talk face-to-face with an appraiser or go straight to an insured mailer.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+          <div class="text-3xl">🔬</div>
+          <h3 class="mt-3 font-semibold">2) Transparent evaluation</h3>
+          <p class="mt-2 text-slate-600">We test, weigh, and price your items using current spot prices. You’ll see the breakdown.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+          <div class="text-3xl">💸</div>
+          <h3 class="mt-3 font-semibold">3) Approve & get paid fast</h3>
+          <p class="mt-2 text-slate-600">Accept your offer for same-day ACH/Zelle. Decline? We ship back insured.</p>
+        </div>
+      </div>
+      <div class="mt-8 flex gap-3">
+        <a href="#kit" class="rounded-lg bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">Request Free Kit</a>
+        <a href="#book" class="rounded-lg border border-slate-300 px-5 py-3 hover:bg-slate-100">Book a Zoom</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust layer -->
+  <section id="trust" class="border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Why trust us</h2>
+      <ul class="mt-6 grid md:grid-cols-2 gap-6 text-slate-700">
+        <li class="rounded-xl border border-slate-200 p-5 bg-white">
+          ✅ <strong>Face-to-face appraisal:</strong> Meet us on Zoom before you ship.
+        </li>
+        <li class="rounded-xl border border-slate-200 p-5 bg-white">
+          ✅ <strong>Insured, tracked shipping:</strong> Clear chain-of-custody from kit to payout.
+        </li>
+        <li class="rounded-xl border border-slate-200 p-5 bg-white">
+          ✅ <strong>Licensed buyer:</strong> We operate by the book. Compliance is part of our brand.
+        </li>
+        <li class="rounded-xl border border-slate-200 p-5 bg-white">
+          ✅ <strong>Same-day payouts:</strong> Approve by 3pm CT, get paid that day.
+        </li>
+      </ul>
+      <p class="mt-6 text-sm text-slate-500">
+        * Final offers are made after in-lab testing upon receipt. If you decline, we return your items insured.
+      </p>
+    </div>
+  </section>
+
+  <!-- Book Zoom (Calendly embed) -->
+  <section id="book" class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Book a live appraisal</h2>
+      <p class="mt-2 text-slate-600">10–15 minute consult. We’ll preview your items and answer questions before you ship.</p>
+      <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-3">
+        <!-- 🔧 Replace the data-url with your Calendly scheduling link -->
+        <div class="calendly-inline-widget w-full" data-url="https://calendly.com/your-handle/zoom-appraisal" style="min-width:320px;height:680px;"></div>
+      </div>
+      <!-- Calendly embed script -->
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </section>
+
+  <!-- Request Kit (Typeform or form embed) -->
+  <section id="kit" class="border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Request your insured kit</h2>
+      <p class="mt-2 text-slate-600">We’ll email your label and packing checklist. Shipping is insured and tracked both ways.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <!-- Option A: Typeform embed -->
+        <div class="rounded-2xl border border-slate-200 bg-white">
+          <!-- 🔧 Replace src with your Typeform URL -->
+          <iframe title="Request Kit Form" src="https://form.typeform.com/to/your-form-id" class="w-full h-[680px] rounded-2xl" frameborder="0"></iframe>
+        </div>
+
+        <!-- Option B: Simple native form (MVP fallback) -->
+        <form class="rounded-2xl border border-slate-200 bg-white p-6 space-y-4" onsubmit="alert('MVP demo — wire to Zapier/Shippo later'); return false;">
+          <div>
+            <label class="block text-sm font-medium">Full name</label>
+            <input class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" required />
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">Email</label>
+              <input type="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Phone</label>
+              <input type="tel" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Shipping address</label>
+            <textarea class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" rows="3" required></textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">What are you sending?</label>
+            <input class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" placeholder="e.g., 14k ring, silver chain, gold coins" />
+          </div>
+          <button class="w-full rounded-lg bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">Email me my kit label</button>
+          <p class="text-xs text-slate-500">By continuing, you agree to our Terms and Privacy Policy.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faq" class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Frequently asked questions</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <details class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <summary class="font-semibold cursor-pointer">Do I have to do a Zoom call?</summary>
+          <p class="mt-2 text-slate-600">No. It’s optional. Most customers just request a kit, but the Zoom option is there if you want to meet us first.</p>
+        </details>
+        <details class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <summary class="font-semibold cursor-pointer">How fast do I get paid?</summary>
+          <p class="mt-2 text-slate-600">Same-day ACH/Zelle if you accept your offer by 3pm CT, otherwise next business day.</p>
+        </details>
+        <details class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <summary class="font-semibold cursor-pointer">What if I decline the offer?</summary>
+          <p class="mt-2 text-slate-600">We return your items insured and tracked. You always stay in control.</p>
+        </details>
+        <details class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+          <summary class="font-semibold cursor-pointer">What do you buy?</summary>
+          <p class="mt-2 text-slate-600">Gold, silver, platinum jewelry and scrap, plus monetary gold (coins and bars). If in doubt, ask on Zoom.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referral -->
+  <section class="border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <div class="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 md:flex items-center justify-between">
+        <div>
+          <h3 class="text-lg font-semibold">Get $25 for each friend who sells</h3>
+          <p class="text-slate-600">We’ll send your reward after their payout. Fair and simple.</p>
+        </div>
+        <a href="#kit" class="mt-4 md:mt-0 inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 hover:bg-slate-100">Refer someone</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12 grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="h-7 w-7 rounded-lg gold-grad"></div>
+          <span class="font-semibold">Cash for <span class="gold-text">Gold</span> Zoom™</span>
+        </div>
+        <p class="mt-3 text-sm text-slate-600">
+          A brand of The Gold Standard USA LLC (Wisconsin). By-the-book compliance. Transparent process. Fast payouts.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Company</h4>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li><a class="hover:underline" href="#how">How it works</a></li>
+          <li><a class="hover:underline" href="#trust">Why trust us</a></li>
+          <li><a class="hover:underline" href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Policies</h4>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li><a class="hover:underline" href="/terms.html">Terms of Service</a></li>
+          <li><a class="hover:underline" href="/privacy.html">Privacy Policy</a></li>
+          <li><a class="hover:underline" href="#">Licensing & Notices</a></li>
+          <li><a class="hover:underline" href="mailto:hello@cashforgoldzoom.com">hello@cashforgoldzoom.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
+        © <span id="yr"></span> Cash for Gold Zoom. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple scripts -->
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mNav');
+    btn?.addEventListener('click', () => {
+      const open = nav.classList.contains('hidden');
+      nav.classList.toggle('hidden', !open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Smooth scroll (native in modern browsers via CSS; JS fallback)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length>1) {
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+
+  <!-- Pixels (add when ready)
+  <script>/* Meta Pixel */</script>
+  <script>/* TikTok Pixel */</script>
+  <script>/* GA4 */</script>
+  -->
+</body>
+</html>
