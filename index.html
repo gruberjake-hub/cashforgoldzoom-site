@@ -379,6 +379,18 @@
     });
   </script>
 
+// google analytics tracking
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3E05GVM9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J3E05GVM9J', {
+    transport_type: 'beacon',
+    anonymize_ip: true
+  });
+</script>
+
   <!-- Pixels (add when ready)
   <script>/* Meta Pixel */</script>
   <script>/* TikTok Pixel */</script>
