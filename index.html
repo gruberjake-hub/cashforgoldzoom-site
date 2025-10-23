@@ -288,11 +288,11 @@
       <div class="mt-3 text-sm text-slate-600 space-y-3">
         <p>
           Cash for Gold Zoom™ is a Wisconsin-based precious metals buyer operated by The Gold Standard USA LLC.
-          We provide insured mail-in appraisals with an optional live Zoom evaluation before customers send items.
+          We provide insured mail-in appraisals with an optional live Zoom evaluation before customers send items or at the time of metal evaluation.
           We buy gold, silver, and platinum jewelry and monetary gold (coins/bullion) and pay via ACH, Zelle, check, or wire.
         </p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>USP: Meet your appraiser live on Zoom to understand pricing before mailing.</li>
+          <li>USP: Meet your appraiser live on Zoom to understand pricing before mailing or during evaluation.</li>
           <li>Shipping: Free insured kit; end-to-end tracking and recorded unboxing.</li>
           <li>Payouts: Same-day ACH if accepted by 3:00pm CT.</li>
           <li>Compliance: AML/KYC, documented chain of custody, licensed where required.</li>
@@ -380,6 +380,24 @@
     anonymize_ip: true
   });
 </script>
+
+<script>
+  // Stamp today's date (ISO) into the "Last updated" time tag
+  const t = document.getElementById('aiSummaryUpdated');
+  if (t) t.textContent = new Date().toISOString().slice(0,10);
+
+  // Track interactions (requires GA gtag snippet already present)
+  const d = document.getElementById('aiSummaryDetails');
+  if (d && typeof gtag === 'function') {
+    d.addEventListener('toggle', () => {
+      gtag('event', d.open ? 'ai_summary_open' : 'ai_summary_close', {
+        event_category: 'engagement',
+        event_label: 'ai-summary'
+      });
+    });
+  }
+</script>
+
 
 <!-- JSON-LD: FAQPage (aligns with visible FAQs) -->
 <script type="application/ld+json">
