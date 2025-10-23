@@ -221,33 +221,104 @@
           <iframe title="Request Kit Form" src="https://form.typeform.com/to/your-form-id" class="w-full h-[680px] rounded-2xl" frameborder="0"></iframe>
         </div>
 
-        <!-- Option B: Simple native form (MVP fallback) -->
-        <form class="rounded-2xl border border-slate-200 bg-white p-6 space-y-4" onsubmit="alert('MVP demo — wire to Zapier/Shippo later'); return false;">
-          <div>
-            <label class="block text-sm font-medium">Full name</label>
-            <input class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" required />
-          </div>
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium">Email</label>
-              <input type="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" required />
-            </div>
-            <div>
-              <label class="block text-sm font-medium">Phone</label>
-              <input type="tel" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm font-medium">Shipping address</label>
-            <textarea class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" rows="3" required></textarea>
-          </div>
-          <div>
-            <label class="block text-sm font-medium">What are you sending?</label>
-            <input class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" placeholder="e.g., 14k ring, silver chain, gold coins" />
-          </div>
-          <button class="w-full rounded-lg bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">Email me my kit label</button>
-          <p class="text-xs text-slate-500">By continuing, you agree to our Terms and Privacy Policy.</p>
-        </form>
+        
+        
+        <!-- Option B: Simple native form (Zapier wired) -->
+<form
+  class="rounded-2xl border border-slate-200 bg-white p-6 space-y-4"
+  action="https://hooks.zapier.com/hooks/catch/25103050/urx1x5a/"
+  method="POST"
+  target="zapier_hidden_iframe"
+  id="kitForm"
+>
+  <!-- Honeypot (spam trap) -->
+  <div class="hidden">
+    <label>Leave this field blank</label>
+    <input type="text" name="hp_field" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <div>
+    <label for="full_name" class="block text-sm font-medium">Full name</label>
+    <input id="full_name" name="full_name" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-4">
+    <div>
+      <label for="email" class="block text-sm font-medium">Email</label>
+      <input id="email" name="email" type="email" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+    </div>
+    <div>
+      <label for="phone" class="block text-sm font-medium">Phone</label>
+      <input id="phone" name="phone" type="tel" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+    </div>
+  </div>
+
+  <div>
+    <label for="address" class="block text-sm font-medium">Shipping address</label>
+    <textarea id="address" name="address" rows="3" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"></textarea>
+  </div>
+
+  <div>
+    <label for="items" class="block text-sm font-medium">What are you sending?</label>
+    <input id="items" name="items" placeholder="e.g., 14k ring, silver chain, gold coins" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+  </div>
+
+  <div class="flex items-start gap-2">
+    <input id="consent" name="consent" type="checkbox" required class="mt-1">
+    <label for="consent" class="text-sm text-slate-600">
+      I agree to the <a class="underline" href="/terms.html" target="_blank" rel="noopener">Terms</a>
+      and <a class="underline" href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+    </label>
+  </div>
+
+  <!-- Hidden metadata -->
+  <input type="hidden" name="page_url" id="page_url">
+  <input type="hidden" name="utm_source" id="utm_source">
+  <input type="hidden" name="utm_medium" id="utm_medium">
+  <input type="hidden" name="utm_campaign" id="utm_campaign">
+  <input type="hidden" name="utm_term" id="utm_term">
+  <input type="hidden" name="utm_content" id="utm_content">
+
+  <button id="kitSubmit" class="w-full rounded-lg bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">
+    Email me my kit label
+  </button>
+
+  <p class="text-xs text-slate-500">
+    By continuing, you agree to our Terms and Privacy Policy.
+  </p>
+
+  <p id="kitThanks" class="hidden text-sm text-emerald-700">
+    Thanks! We received your request. Check your email shortly.
+  </p>
+</form>
+
+<!-- Keep the user on-page after POST -->
+<iframe name="zapier_hidden_iframe" class="hidden"></iframe>
+
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ""; };
+
+    set('page_url', location.href);
+    set('utm_source', params.get('utm_source'));
+    set('utm_medium', params.get('utm_medium'));
+    set('utm_campaign', params.get('utm_campaign'));
+    set('utm_term', params.get('utm_term'));
+    set('utm_content', params.get('utm_content'));
+
+    const form = document.getElementById('kitForm');
+    const btn = document.getElementById('kitSubmit');
+    const thanks = document.getElementById('kitThanks');
+
+    form.addEventListener('submit', function () {
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      setTimeout(() => { if (thanks) thanks.classList.remove('hidden'); }, 600);
+      setTimeout(() => { if (btn) { btn.disabled = false; btn.textContent = 'Email me my kit label'; }}, 4000);
+    });
+  })();
+</script>
+
       </div>
     </div>
   </section>
