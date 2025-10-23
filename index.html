@@ -210,151 +210,152 @@
 </section>
 
 
-  <!-- Request Kit (Typeform or form embed) 
-  <section id="kit" class="border-t border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Request your insured kit</h2>
-      <p class="mt-2 text-slate-600">We’ll email your label and packing checklist. Shipping is insured and tracked both ways.</p>
-      <div class="mt-6 grid md:grid-cols-2 gap-6"> -->
-       <!-- Option A: Typeform embed (kept for later) -->
-<div class="rounded-2xl border border-slate-200 bg-white">
-  <!--
-  <iframe title="Request Kit Form" src="https://form.typ..." class="w-full h-[680px] rounded-2xl" frameborder="0"></iframe>
-  -->
+ <!-- Request Kit (Typeform kept for later; using left explainer + right form) -->
+<section id="kit" class="border-t border-slate-200">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Request your insured kit</h2>
+    <p class="mt-2 text-slate-600">We’ll email your label and packing checklist. Shipping is insured and tracked both ways.</p>
 
-  <!-- Placeholder content (left column) -->
-  <div class="p-6">
-    <figure class="aspect-video w-full overflow-hidden rounded-xl bg-slate-100">
-      <!-- Replace with your real image when ready -->
-      <img
-        src="/assets/img/kit-placeholder.jpg"
-        alt="Insured mail-in kit contents illustration"
-        class="h-full w-full object-cover"
-      />
-    </figure>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <!-- LEFT: Text + image explainer -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col">
+        <figure class="aspect-[4/3] md:aspect-video w-full overflow-hidden rounded-xl bg-slate-100">
+          <!-- Swap with your real asset when ready -->
+          <img
+            src="/assets/img/kit-placeholder.jpg"
+            alt="Insured mail-in kit contents illustration"
+            class="w-full h-full object-cover"
+          />
+        </figure>
 
-    <h3 class="mt-4 text-lg font-semibold">Insured Mail-In Kit</h3>
-    <p class="mt-2 text-slate-600 text-sm">
-      Safe, trackable, and insured both ways. Pack your items with the included checklist—no rush, no pressure.
-    </p>
+        <h3 class="mt-4 text-lg font-semibold">Insured Mail-In Kit</h3>
+        <p class="mt-2 text-slate-600 text-sm">
+          Safe, trackable, and insured both ways. Pack your items with the included checklist—no rush, no pressure.
+        </p>
 
-    <ul class="mt-3 text-sm text-slate-700 space-y-1">
-      <li>• Prepaid insured label (FedEx/UPS)</li>
-      <li>• Tracking updates to your email</li>
-      <li>• Transparent evaluation with optional Zoom</li>
-      <li>• Fast payout by ACH or check</li>
-    </ul>
+        <ul class="mt-3 text-sm text-slate-700 space-y-1 list-disc pl-5">
+          <li>Prepaid insured label (FedEx/UPS)</li>
+          <li>Tracking updates to your email</li>
+          <li>Transparent evaluation with optional Zoom</li>
+          <li>Fast payout by ACH or check</li>
+        </ul>
 
-    <!-- Optional micro-credibility row -->
-    <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
-      <svg width="16" height="16" viewBox="0 0 24 24" class="shrink-0"><path fill="currentColor" d="M12 2l3 7h7l-5.5 4.1L18 20l-6-4-6 4 1.5-6.9L2 9h7z"/></svg>
-      Insured & tracked | Transparent process | Wisconsin-based
-    </div>
-  </div>
-</div>
+        <!-- Optional micro-credibility row -->
+        <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
+          <svg width="16" height="16" viewBox="0 0 24 24" class="shrink-0"><path fill="currentColor" d="M12 2l3 7h7l-5.5 4.1L18 20l-6-4-6 4 1.5-6.9L2 9h7z"/></svg>
+          Insured & tracked • Transparent process • Wisconsin-based
+        </div>
 
+        <!-- Keep a commented copy of the old Typeform embed for later -->
+        <!--
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-white">
+          <iframe title="Request Kit Form" src="https://form.typeform.com/to/your-form-id" class="w-full h-[680px] rounded-2xl" frameborder="0"></iframe>
+        </div>
+        -->
+      </div>
 
-        
-        
-        <!-- Option B: Simple native form (Zapier wired) -->
-<form
-  class="rounded-2xl border border-slate-200 bg-white p-6 space-y-4"
-  action="/.netlify/functions/kit"
-  method="POST"
-  target="zapier_hidden_iframe"
-  id="kitForm"
->
-  <!-- Honeypot (spam trap) -->
-  <div class="hidden">
-    <label>Leave this field blank</label>
-    <input type="text" name="hp_field" tabindex="-1" autocomplete="off" />
-  </div>
+      <!-- RIGHT: Your existing native form + hidden iframe + script (unchanged) -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-6">
+        <form
+          class="space-y-4"
+          action="/.netlify/functions/kit"
+          method="POST"
+          target="zapier_hidden_iframe"
+          id="kitForm"
+        >
+          <!-- Honeypot (spam trap) -->
+          <div class="hidden">
+            <label>Leave this field blank</label>
+            <input type="text" name="hp_field" tabindex="-1" autocomplete="off" />
+          </div>
 
-  <div>
-    <label for="full_name" class="block text-sm font-medium">Full name</label>
-    <input id="full_name" name="full_name" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
-  </div>
+          <div>
+            <label for="full_name" class="block text-sm font-medium">Full name</label>
+            <input id="full_name" name="full_name" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+          </div>
 
-  <div class="grid md:grid-cols-2 gap-4">
-    <div>
-      <label for="email" class="block text-sm font-medium">Email</label>
-      <input id="email" name="email" type="email" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
-    </div>
-    <div>
-      <label for="phone" class="block text-sm font-medium">Phone</label>
-      <input id="phone" name="phone" type="tel" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
-    </div>
-  </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label for="email" class="block text-sm font-medium">Email</label>
+              <input id="email" name="email" type="email" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium">Phone</label>
+              <input id="phone" name="phone" type="tel" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+            </div>
+          </div>
 
-  <div>
-    <label for="address" class="block text-sm font-medium">Shipping address</label>
-    <textarea id="address" name="address" rows="3" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"></textarea>
-  </div>
+          <div>
+            <label for="address" class="block text-sm font-medium">Shipping address</label>
+            <textarea id="address" name="address" rows="3" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"></textarea>
+          </div>
 
-  <div>
-    <label for="items" class="block text-sm font-medium">What are you sending?</label>
-    <input id="items" name="items" placeholder="e.g., 14k ring, silver chain, gold coins" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
-  </div>
+          <div>
+            <label for="items" class="block text-sm font-medium">What are you sending?</label>
+            <input id="items" name="items" placeholder="e.g., 14k ring, silver chain, gold coins" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+          </div>
 
-  <div class="flex items-start gap-2">
-    <input id="consent" name="consent" type="checkbox" required class="mt-1">
-    <label for="consent" class="text-sm text-slate-600">
-      I agree to the <a class="underline" href="/terms.html" target="_blank" rel="noopener">Terms</a>
-      and <a class="underline" href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
-    </label>
-  </div>
+          <div class="flex items-start gap-2">
+            <input id="consent" name="consent" type="checkbox" required class="mt-1">
+            <label for="consent" class="text-sm text-slate-600">
+              I agree to the <a class="underline" href="/terms.html" target="_blank" rel="noopener">Terms</a>
+              and <a class="underline" href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+            </label>
+          </div>
 
-  <!-- Hidden metadata -->
-  <input type="hidden" name="page_url" id="page_url">
-  <input type="hidden" name="utm_source" id="utm_source">
-  <input type="hidden" name="utm_medium" id="utm_medium">
-  <input type="hidden" name="utm_campaign" id="utm_campaign">
-  <input type="hidden" name="utm_term" id="utm_term">
-  <input type="hidden" name="utm_content" id="utm_content">
+          <!-- Hidden metadata -->
+          <input type="hidden" name="page_url" id="page_url">
+          <input type="hidden" name="utm_source" id="utm_source">
+          <input type="hidden" name="utm_medium" id="utm_medium">
+          <input type="hidden" name="utm_campaign" id="utm_campaign">
+          <input type="hidden" name="utm_term" id="utm_term">
+          <input type="hidden" name="utm_content" id="utm_content">
 
-  <button id="kitSubmit" class="w-full rounded-lg bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">
-    Email me my kit label
-  </button>
+          <button id="kitSubmit" class="w-full rounded-lg bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">
+            Email me my kit label
+          </button>
 
-  <p class="text-xs text-slate-500">
-    By continuing, you agree to our Terms and Privacy Policy.
-  </p>
+          <p class="text-xs text-slate-500">
+            By continuing, you agree to our Terms and Privacy Policy.
+          </p>
 
-  <p id="kitThanks" class="hidden text-sm text-emerald-700">
-    Thanks! We received your request. Check your email shortly.
-  </p>
-</form>
+          <p id="kitThanks" class="hidden text-sm text-emerald-700">
+            Thanks! We received your request. Check your email shortly.
+          </p>
+        </form>
 
-<!-- Keep the user on-page after POST -->
-<iframe name="zapier_hidden_iframe" class="hidden"></iframe>
+        <!-- Keep the user on-page after POST -->
+        <iframe name="zapier_hidden_iframe" class="hidden"></iframe>
 
-<script>
-  (function () {
-    const params = new URLSearchParams(window.location.search);
-    const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ""; };
+        <!-- UTM + submission UX script -->
+        <script>
+          (function () {
+            const params = new URLSearchParams(window.location.search);
+            const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ""; };
 
-    set('page_url', location.href);
-    set('utm_source', params.get('utm_source'));
-    set('utm_medium', params.get('utm_medium'));
-    set('utm_campaign', params.get('utm_campaign'));
-    set('utm_term', params.get('utm_term'));
-    set('utm_content', params.get('utm_content'));
+            set('page_url', location.href);
+            set('utm_source', params.get('utm_source'));
+            set('utm_medium', params.get('utm_medium'));
+            set('utm_campaign', params.get('utm_campaign'));
+            set('utm_term', params.get('utm_term'));
+            set('utm_content', params.get('utm_content'));
 
-    const form = document.getElementById('kitForm');
-    const btn = document.getElementById('kitSubmit');
-    const thanks = document.getElementById('kitThanks');
+            const form = document.getElementById('kitForm');
+            const btn = document.getElementById('kitSubmit');
+            const thanks = document.getElementById('kitThanks');
 
-    form.addEventListener('submit', function () {
-      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-      setTimeout(() => { if (thanks) thanks.classList.remove('hidden'); }, 600);
-      setTimeout(() => { if (btn) { btn.disabled = false; btn.textContent = 'Email me my kit label'; }}, 4000);
-    });
-  })();
-</script>
-
+            form.addEventListener('submit', function () {
+              if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+              setTimeout(() => { if (thanks) thanks.classList.remove('hidden'); }, 600);
+              setTimeout(() => { if (btn) { btn.disabled = false; btn.textContent = 'Email me my kit label'; }}, 4000);
+            });
+          })();
+        </script>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- FAQs -->
   <section id="faq" class="border-t border-slate-200 bg-white">
