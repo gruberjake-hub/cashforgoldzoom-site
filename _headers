@@ -8,3 +8,5 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Netlify-CDN-Cache-Control: public, max-age=600, must-revalidate
 
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
