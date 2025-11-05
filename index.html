@@ -261,35 +261,45 @@
     <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Request your insured kit</h2>
     <p class="mt-2 text-slate-600">We’ll email your label and packing checklist. Shipping is insured and tracked both ways.</p>
 
-    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-      <!-- LEFT: Text + image explainer -->
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col">
-        <figure class="aspect-[4/3] md:aspect-video w-full overflow-hidden rounded-xl bg-slate-100">
-          <!-- Swap with your real asset when ready -->
-          <img
-            src="/assets/img/kit-placeholder.jpg"
-            alt="Insured mail-in kit contents illustration"
-            class="w-full h-full object-cover"
-          />
-        </figure>
+   <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:items-stretch">
+  <!-- LEFT: Text + image explainer -->
+  <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col h-full md:sticky md:top-6">
+    <figure class="aspect-[4/3] md:aspect-video w-full overflow-hidden rounded-xl bg-slate-100">
+      <img
+        src="/assets/img/kit-placeholder.jpg"
+        alt="Insured mail-in kit contents illustration"
+        class="w-full h-full object-cover"
+      />
+    </figure>
 
-        <h3 class="mt-4 text-lg font-semibold">Insured Mail-In Kit</h3>
-        <p class="mt-2 text-slate-600 text-sm">
-          Safe, trackable, and insured both ways. Pack your items with the included checklist—no rush, no pressure.
-        </p>
+    <h3 class="mt-4 text-lg font-semibold">Insured Mail-In Kit</h3>
+    <p class="mt-2 text-slate-600 text-sm">
+      Safe, trackable, and insured both ways. Pack your items with the included checklist—no rush, no pressure.
+    </p>
 
-        <ul class="mt-3 text-sm text-slate-700 space-y-1 list-disc pl-5">
-          <li>Prepaid insured label (FedEx/UPS)</li>
-          <li>Tracking updates to your email</li>
-          <li>Transparent evaluation with optional Zoom</li>
-          <li>Fast payout by ACH or check</li>
-        </ul>
+    <ul class="mt-3 text-sm text-slate-700 space-y-1 list-disc pl-5">
+      <li>Prepaid insured label (FedEx/UPS)</li>
+      <li>Tracking updates to your email</li>
+      <li>Transparent evaluation with optional Zoom</li>
+      <li>Fast payout by ACH or check</li>
+    </ul>
 
-        <!-- Optional micro-credibility row -->
-        <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
-          <svg width="16" height="16" viewBox="0 0 24 24" class="shrink-0"><path fill="currentColor" d="M12 2l3 7h7l-5.5 4.1L18 20l-6-4-6 4 1.5-6.9L2 9h7z"/></svg>
-          Insured & tracked • Transparent process • Wisconsin-based
-        </div>
+    <!-- spacer pushes the credibility row to the bottom for visual balance -->
+    <div class="mt-auto"></div>
+
+    <!-- Optional micro-credibility row -->
+    <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
+      <svg width="16" height="16" viewBox="0 0 24 24" class="shrink-0"><path fill="currentColor" d="M12 2l3 7h7l-5.5 4.1L18 20l-6-4-6 4 1.5-6.9L2 9h7z"/></svg>
+      Insured & tracked • Transparent process • Wisconsin-based
+    </div>
+  </div>
+
+  <!-- RIGHT: wrap your form fields in a matching card to equalize height -->
+  <div class="rounded-2xl border border-slate-200 bg-white p-6 h-full">
+    <!-- your existing <form id="kitForm"> ...fields & button... </form> goes here -->
+  </div>
+</div>
+
 
         <!-- Keep a commented copy of the old Typeform embed for later -->
         <!--
