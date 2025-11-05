@@ -318,7 +318,7 @@
   <div>
     <label for="first_name" class="block text-sm font-medium">First name</label>
     <input id="first_name" name="first_name" required
-           autocomplete="given-name" autocapitalize="words" inputmode="text"
+            autocomplete="given-name" autocapitalize="words" inputmode="text"
            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
   </div>
   <div>
@@ -326,6 +326,8 @@
     <input id="last_name" name="last_name"
            autocomplete="family-name" autocapitalize="words" inputmode="text"
            class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+           <input type="hidden" id="full_name" name="full_name" />
+
   </div>
 </div>
 
@@ -379,6 +381,23 @@
             Thanks! We received your request. Check your email shortly.
           </p>
         </form>
+
+
+        <!-- Adding to normalize "first" and "last" name to "full_name" in Zaps and Netlify-->
+        <script>
+  (function () {
+    const form = document.getElementById('kitForm');
+    if (!form) return;
+    form.addEventListener('submit', function () {
+      const first = (document.getElementById('first_name')?.value || '').trim();
+      const last  = (document.getElementById('last_name')?.value || '').trim();
+      const full  = [first, last].filter(Boolean).join(' ');
+      const fullField = document.getElementById('full_name');
+      if (fullField) fullField.value = full;
+    });
+  })();
+</script>
+
 
         <!-- Keep the user on-page after POST -->
         <iframe name="zapier_hidden_iframe" class="hidden"></iframe>
