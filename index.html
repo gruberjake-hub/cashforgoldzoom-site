@@ -443,6 +443,38 @@
   })();
 </script>
 
+<!--Keep legacy address-->
+<script>
+(function () {
+  const byId = id => document.getElementById(id);
+  const clean = s => (s || "").toString().replace(/\s+/g," ").trim();
+
+  function syncLegacyAddress() {
+    const st = byId('state');
+    if (st) st.value = (st.value || '').toUpperCase();
+
+    const v = id => clean(byId(id)?.value);
+    const line = [v('address1'), v('address2')].filter(Boolean).join(', ');
+    const cityStZip = [v('city'), v('state'), v('postal_code')].filter(Boolean).join(', ');
+    const country = v('country') || 'US';
+    const full = [line, cityStZip, country].filter(Boolean).join(', ');
+    const hidden = byId('address');
+    if (hidden) hidden.value = full;
+  }
+
+  const form = byId('kitForm');
+  if (!form) return;
+
+  ['address1','address2','city','state','postal_code','country'].forEach(id => {
+    const el = byId(id); if (!el) return;
+    ['input','change','blur'].forEach(evt => el.addEventListener(evt, syncLegacyAddress));
+  });
+
+  form.addEventListener('submit', syncLegacyAddress);
+  syncLegacyAddress(); // initial pass for autofill
+})();
+</script>
+
 
         <!-- Keep the user on-page after POST -->
         <iframe name="zapier_hidden_iframe" class="hidden"></iframe>
