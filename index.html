@@ -343,10 +343,55 @@
             </div>
           </div>
 
-          <div>
-            <label for="address" class="block text-sm font-medium">Shipping address</label>
-            <textarea id="address" name="address" rows="3" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"></textarea>
-          </div>
+          <!-- Shipping address (structured) -->
+<div class="grid md:grid-cols-2 gap-4">
+  <div class="md:col-span-2">
+    <label for="address1" class="block text-sm font-medium">Street address</label>
+    <input id="address1" name="address1" required
+           autocomplete="address-line1" inputmode="text" autocapitalize="words"
+           class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+  </div>
+
+  <div class="md:col-span-2">
+    <label for="address2" class="block text-sm font-medium">Apt / Suite (optional)</label>
+    <input id="address2" name="address2"
+           autocomplete="address-line2" inputmode="text" autocapitalize="characters"
+           class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+  </div>
+
+  <div>
+    <label for="city" class="block text-sm font-medium">Town / City</label>
+    <input id="city" name="city" required
+           autocomplete="address-level2" inputmode="text" autocapitalize="words"
+           class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+  </div>
+
+  <div class="grid grid-cols-2 gap-4">
+    <div>
+      <label for="state" class="block text-sm font-medium">State</label>
+      <input id="state" name="state" required maxlength="2" pattern="[A-Za-z]{2}"
+             autocomplete="address-level1" inputmode="text"
+             class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 uppercase" />
+    </div>
+    <div>
+      <label for="postal_code" class="block text-sm font-medium">ZIP</label>
+      <input id="postal_code" name="postal_code" required
+             pattern="\d{5}(-\d{4})?" inputmode="numeric" autocomplete="postal-code"
+             class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+    </div>
+  </div>
+
+  <div class="md:col-span-2">
+    <label for="country" class="block text-sm font-medium">Country</label>
+    <input id="country" name="country" value="US"
+           autocomplete="country" inputmode="text"
+           class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+  </div>
+</div>
+
+<!-- Legacy one-line address for existing Zaps/Functions (safe to remove later) -->
+<input type="hidden" id="address" name="address" />
+
 
           <div>
             <label for="items" class="block text-sm font-medium">What are you sending?</label>
